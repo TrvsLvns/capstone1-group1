@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Blocking
   - Actor
-  - 
+  - Objects
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Actors
     uniqueID: 567178853
+    locked: 0
+  - name: Objects
+    uniqueID: 2104225223
     locked: 0
