@@ -51,4 +51,13 @@ public class Player : MonoBehaviour
             transform.Translate(moveDelta.x * 2 * Time.deltaTime, 0, 0); // Time.deltaTime smooths out performance between devices
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Destroy the object when it collides with an object tagged as "Enemy"
+            Destroy(this.gameObject);
+            // Quit application or something.
+        }
+    }
 }
