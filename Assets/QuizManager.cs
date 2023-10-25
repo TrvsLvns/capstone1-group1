@@ -56,6 +56,7 @@ public class QuizManager : MonoBehaviour
             }
             remainingQuestions = QnA_Hard.Count;
         }
+        RemainingQuestionsTxt.text = "Remaining Questions: " + remainingQuestions;
     }
 
     public void countRemainingQuestions()
@@ -97,44 +98,54 @@ public class QuizManager : MonoBehaviour
     {
         if (remainingQuestions > 0)
         {
-            menuManager.showScreen(MenuManager.MenuScreenType.canvas_three_submit);
             generateQuestion();
+            menuManager.showScreen(MenuManager.MenuScreenType.canvas_three_submit);
         }
     }
 
     public void onSubmit()
     {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<QuizButtons>().submitted = true;
+        }
         menuManager.showScreen(MenuManager.MenuScreenType.canvas_three_continue);
         if (_difficulty == "Easy")
         {
             var colors = options[QnA_Easy[currentQuestion].CorrectAnswer].GetComponent<Button>().colors;
-            colors.normalColor = new Color(88, 168, 112);
+            colors.normalColor = Color.green;
+            options[QnA_Easy[currentQuestion].CorrectAnswer].GetComponent<Button>().colors = colors;
             if (QnA_Easy[currentQuestion].CorrectAnswer != answer)
             {
                 var color = options[answer].GetComponent<Button>().colors;
-                color.normalColor = new Color(254, 148, 148);
+                color.normalColor = Color.red;
+                options[answer].GetComponent<Button>().colors = color;
             }
             QnA_Easy[currentQuestion].answered = true;
         }
         else if (_difficulty == "Intermediate")
         {
             var colors = options[QnA_Intermediate[currentQuestion].CorrectAnswer].GetComponent<Button>().colors;
-            colors.normalColor = new Color(88, 168, 112);
+            colors.normalColor = Color.green;
+            options[QnA_Intermediate[currentQuestion].CorrectAnswer].GetComponent<Button>().colors = colors;
             if (QnA_Intermediate[currentQuestion].CorrectAnswer != answer)
             {
                 var color = options[answer].GetComponent<Button>().colors;
-                color.normalColor = new Color(254, 148, 148);
+                color.normalColor = Color.red;
+                options[answer].GetComponent<Button>().colors = color;
             }
             QnA_Intermediate[currentQuestion].answered = true;
         }
         else if (_difficulty == "Hard")
         {
             var colors = options[QnA_Hard[currentQuestion].CorrectAnswer].GetComponent<Button>().colors;
-            colors.normalColor = new Color(88, 168, 112);
+            colors.normalColor = Color.green;
+            options[QnA_Hard[currentQuestion].CorrectAnswer].GetComponent<Button>().colors = colors;
             if (QnA_Hard[currentQuestion].CorrectAnswer != answer)
             {
                 var color = options[answer].GetComponent<Button>().colors;
-                color.normalColor = new Color(254, 148, 148);
+                color.normalColor = Color.red;
+                options[answer].GetComponent<Button>().colors = color;
             }
             QnA_Hard[currentQuestion].answered = true;
         }
@@ -147,6 +158,12 @@ public class QuizManager : MonoBehaviour
         {
             var colors = options[i].GetComponent<Button>().colors; 
             colors.normalColor = Color.white;
+            options[i].GetComponent<Button>().colors = colors;
+        }
+
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<QuizButtons>().submitted = false;
         }
 
         if (remainingQuestions > 0)
@@ -164,29 +181,29 @@ public class QuizManager : MonoBehaviour
     {
         if (_difficulty == "Easy")
         {
-            while (currentQuestion < 0 || QnA_Easy[currentQuestion].answered != false)
+            do
             {
                 currentQuestion = Random.Range(0, QnA_Easy.Count);
-            }
+            } while (currentQuestion < 0 || QnA_Easy[currentQuestion].answered != false) ;
             QuestionTxt.text = QnA_Easy[currentQuestion].Question;
         }
         else if (_difficulty == "Intermediate")
         {
-            while (currentQuestion < 0 || QnA_Intermediate[currentQuestion].answered != false)
+            do
             {
                 currentQuestion = Random.Range(0, QnA_Intermediate.Count);
-            }
+            } while (currentQuestion < 0 || QnA_Intermediate[currentQuestion].answered != false) ;
             QuestionTxt.text = QnA_Intermediate[currentQuestion].Question;
         }
         else if (_difficulty == "Hard")
         {
-            while (currentQuestion < 0 || QnA_Hard[currentQuestion].answered != false)
+            do
             {
                 currentQuestion = Random.Range(0, QnA_Hard.Count);
-            }
+            } while (currentQuestion < 0 || QnA_Hard[currentQuestion].answered != false);
             QuestionTxt.text = QnA_Hard[currentQuestion].Question;
-        }
-        setAnswers();
+        } 
+            setAnswers();
     }
 
     void setAnswers()
@@ -207,7 +224,7 @@ public class QuizManager : MonoBehaviour
         }
         else if (_difficulty == "Hard")
         {
-            for (int i = 0; i < QnA_Hard.Count; i++)
+            for (int i = 0; i < options.Length; i++)
             {
                 options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA_Hard[currentQuestion].Answers[i];
             }

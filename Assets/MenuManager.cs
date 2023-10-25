@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _remainindQuestionsText;
 
-    [SerializeField]
+    /*[SerializeField]
     TextMeshProUGUI _questionText;
     [SerializeField]
     TextMeshProUGUI _answerText_1;
@@ -32,9 +32,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _answerText_3;
     [SerializeField]
-    TextMeshProUGUI _answerText_4;
+    TextMeshProUGUI _answerText_4;*/
 
-    [SerializeField]
+    /*[SerializeField]
     Button _exitButton;
     [SerializeField]
     Button _backButton;
@@ -55,7 +55,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     Button _answerButton_3;
     [SerializeField]
-    Button _answerButton_4;
+    Button _answerButton_4;*/
     [SerializeField]
     Button _continueButton;
     [SerializeField]
@@ -117,6 +117,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        showScreen(MenuScreenType.close);
+    }
+
     public void exitClicked()
     {
         showScreen(MenuScreenType.close);
@@ -130,6 +135,7 @@ public class MenuManager : MonoBehaviour
 
     public void backClicked()
     {
+        
         showScreen(MenuScreenType.canvas_one);
     }
 

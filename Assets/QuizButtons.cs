@@ -5,9 +5,13 @@ using UnityEngine;
 public class QuizButtons : MonoBehaviour
 {
     public QuizManager quizManager;
+    public bool submitted = false;
 
     public void answer(int buttonID)
     {
-        quizManager.answer = buttonID;
+        if (submitted == false)
+        {
+            quizManager.answer = buttonID;
+        }
     }
 }
