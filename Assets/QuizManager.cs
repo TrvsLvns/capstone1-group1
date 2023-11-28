@@ -141,7 +141,7 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                shopManager.points += 1;
+                shopManager.points += 2;
             }
             QnA_Intermediate[currentQuestion].answered = true;
         }
@@ -158,7 +158,7 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                shopManager.points += 1;
+                shopManager.points += 3;
             }
             QnA_Hard[currentQuestion].answered = true;
         }
