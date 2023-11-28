@@ -146,6 +146,7 @@ public class MenuManager : MonoBehaviour
     public void exitClicked()
     {
         showScreen(MenuScreenType.close);
+        Time.timeScale = 1f;
     }
 
     public void difficultyClicked(string difficulty)
@@ -168,6 +169,7 @@ public class MenuManager : MonoBehaviour
 
     public void onCollision()
     {
+        Time.timeScale = 0f;
         _backgroundPanel.gameObject.SetActive(true);
         showScreen(MenuScreenType.canvas_zero);
     }
