@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
     public QuizManager quizManager;
 
     [SerializeField]
+    Canvas _canvas_0;
+    [SerializeField]
     Canvas _canvas_1;
     [SerializeField]
     Canvas _canvas_2;
@@ -18,12 +20,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     GameObject _backgroundPanel;
 
+    public ShopManager shopManager;
+    public TextMeshProUGUI PointsTxt;
+
+    /*
     [SerializeField]
     TextMeshProUGUI _difficultyText;
     [SerializeField]
     TextMeshProUGUI _remainindQuestionsText;
 
-    /*[SerializeField]
+    [SerializeField]
     TextMeshProUGUI _questionText;
     [SerializeField]
     TextMeshProUGUI _answerText_1;
@@ -63,6 +69,7 @@ public class MenuManager : MonoBehaviour
 
     public enum MenuScreenType
     {
+        canvas_zero,
         canvas_one,
         canvas_two,
         canvas_three_submit,
@@ -78,7 +85,17 @@ public class MenuManager : MonoBehaviour
         menuScreenType = type;
         switch (type)
         {
+            case MenuScreenType.canvas_zero:
+                PointsTxt.text = "Points: " + shopManager.points;
+                _canvas_0.gameObject.SetActive(true);
+                _canvas_1.gameObject.SetActive(false);
+                _canvas_2.gameObject.SetActive(false);
+                _canvas_3.gameObject.SetActive(false);
+                _submitButton.gameObject.SetActive(false);
+                _continueButton.gameObject.SetActive(false);
+                break;
             case MenuScreenType.canvas_one:
+                _canvas_0.gameObject.SetActive(false);
                 _canvas_1.gameObject.SetActive(true);
                 _canvas_2.gameObject.SetActive(false);
                 _canvas_3.gameObject.SetActive(false);
@@ -86,6 +103,7 @@ public class MenuManager : MonoBehaviour
                 _continueButton.gameObject.SetActive(false);
                 break;
             case MenuScreenType.canvas_two:
+                _canvas_0.gameObject.SetActive(false);
                 _canvas_1.gameObject.SetActive(false);
                 _canvas_2.gameObject.SetActive(true);
                 _canvas_3.gameObject.SetActive(false);
@@ -93,6 +111,7 @@ public class MenuManager : MonoBehaviour
                 _continueButton.gameObject.SetActive(false);
                 break;
             case MenuScreenType.canvas_three_submit:
+                _canvas_0.gameObject.SetActive(false);
                 _canvas_1.gameObject.SetActive(false);
                 _canvas_2.gameObject.SetActive(false);
                 _canvas_3.gameObject.SetActive(true);
@@ -100,6 +119,7 @@ public class MenuManager : MonoBehaviour
                 _continueButton.gameObject.SetActive(false);
                 break;
             case MenuScreenType.canvas_three_continue:
+                _canvas_0.gameObject.SetActive(false);
                 _canvas_1.gameObject.SetActive(false);
                 _canvas_2.gameObject.SetActive(false);
                 _canvas_3.gameObject.SetActive(true);
@@ -107,6 +127,7 @@ public class MenuManager : MonoBehaviour
                 _continueButton.gameObject.SetActive(true);
                 break;
             default:
+                _canvas_0.gameObject.SetActive(false);
                 _canvas_1.gameObject.SetActive(false);
                 _canvas_2.gameObject.SetActive(false);
                 _canvas_3.gameObject.SetActive(false);
@@ -133,7 +154,13 @@ public class MenuManager : MonoBehaviour
         showScreen(MenuScreenType.canvas_two);
     }
 
-    public void backClicked()
+    public void backToZero()
+    {
+
+        showScreen(MenuScreenType.canvas_zero);
+    }
+
+    public void backToOne()
     {
         
         showScreen(MenuScreenType.canvas_one);
@@ -142,6 +169,11 @@ public class MenuManager : MonoBehaviour
     public void onCollision()
     {
         _backgroundPanel.gameObject.SetActive(true);
+        showScreen(MenuScreenType.canvas_zero);
+    }
+
+    public void openQuiz()
+    {
         showScreen(MenuScreenType.canvas_one);
     }
 }

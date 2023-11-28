@@ -21,6 +21,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI RemainingQuestionsTxt;
 
     public MenuManager menuManager;
+    public ShopManager shopManager;
 
     public void setDifficulty(string difficulty)
     {
@@ -121,6 +122,10 @@ public class QuizManager : MonoBehaviour
                 color.normalColor = Color.red;
                 options[answer].GetComponent<Button>().colors = color;
             }
+            else
+            {
+                shopManager.points += 1;
+            }
             QnA_Easy[currentQuestion].answered = true;
         }
         else if (_difficulty == "Intermediate")
@@ -134,6 +139,10 @@ public class QuizManager : MonoBehaviour
                 color.normalColor = Color.red;
                 options[answer].GetComponent<Button>().colors = color;
             }
+            else
+            {
+                shopManager.points += 1;
+            }
             QnA_Intermediate[currentQuestion].answered = true;
         }
         else if (_difficulty == "Hard")
@@ -146,6 +155,10 @@ public class QuizManager : MonoBehaviour
                 var color = options[answer].GetComponent<Button>().colors;
                 color.normalColor = Color.red;
                 options[answer].GetComponent<Button>().colors = color;
+            }
+            else
+            {
+                shopManager.points += 1;
             }
             QnA_Hard[currentQuestion].answered = true;
         }
