@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta; // difference between current and next position
     private RaycastHit2D hit; // used for casting the collider box ahead to check if allowed in a location
+    private int HP; //Health poinra
 
     // Start is called before the first frame update
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        HP = 3; //Start player off with 3 HP
     }
 
     private void FixedUpdate()
@@ -55,8 +57,14 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destroy the object when it collides with an object tagged as "Enemy"
-            Destroy(this.gameObject);
+            //Decrement HP when hit by enemy
+            HP--;
+
+            if (HP == 0)
+            {
+                // Destroy the object when HP hits 0
+                Destroy(this.gameObject);
+            }
             // Quit application or something.
         }
     }
