@@ -12226,79 +12226,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1334931491
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 402319739044695998, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_Name
-      value: Enemy 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.433557
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.4066563
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2162535120767153690, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183313305484229166, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_Size.x
-      value: 0.14804128
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183313305484229166, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_Size.y
-      value: 0.3295995
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183313305484229166, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0015579611
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183313305484229166, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0023367777
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
 --- !u!1 &1338964379
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,7 +12409,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12618,9 +12545,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1775430131780781051, guid: e923312a00c9d1045b31d6bd8a9f7816, type: 3}
-  BulletSpeed: 1000
+  BulletSpeed: 10000
   Gun: {fileID: 1294177990}
   ShootPoint: {fileID: 1964126370}
+  BulletTTL: 2
 --- !u!1 &1356579302
 GameObject:
   m_ObjectHideFlags: 0
@@ -52289,83 +52217,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _difficulty: 
   QnA_Easy:
-  - Question: What will the potential difference be across a 2 Ohm resister with
-      3 Amps of current flowing through it?
+  - Question: This is the first easy question
     Answers:
-    - 6 V
-    - 5 V
-    - 12 V
-    - 1.5 V
+    - first easy question answer 1
+    - first easy question answer 2
+    - first easy question answer 3
+    - first easy question answer 4
     CorrectAnswer: 0
     answered: 0
-  - Question: What will the potential difference be across a 200 milliohm resister
-      with 5 Amps of current flowing through it?
+  - Question: This is the second easy question
     Answers:
-    - 1 KV
-    - 1 V
-    - 5 V
-    - 20 V
+    - second easy question answer 1
+    - second easy question answer 2
+    - second easy question answer 3
+    - second easy question answer 4
     CorrectAnswer: 1
     answered: 0
-  - Question: What will the potential difference be across a 7 Ohm resister with
-      100 milliAmps of current flowing through it?
+  - Question: This is the third easy question
     Answers:
-    - 1 V
-    - 7 V
-    - 700 mV
-    - 400 mV
+    - third easy question answer 1
+    - third easy question answer 2
+    - third easy question answer 3
+    - third easy question answer 4
     CorrectAnswer: 2
     answered: 0
   QnA_Intermediate:
-  - Question: Which resistor is required for a current of 8 Amps from a 4V source
+  - Question: This is the first Intermediate question
     Answers:
-    - 500 mOhm
-    - 5 Ohm
-    - 2 Ohm
-    - 200 mOhm
+    - first intermediate question answer 1
+    - first intermediate question answer 2
+    - first intermediate question answer 3
+    - first intermediate question answer 4
     CorrectAnswer: 0
     answered: 0
-  - Question: Which resistor is required for a current of 8 Amps from a 24V source
+  - Question: This is the second Intermediate question
     Answers:
-    - 1 Ohm
-    - 3 Ohm
-    - 333 mOhm
-    - 8 Ohm
+    - second intermediate question answer 1
+    - second intermediate question answer 2
+    - second intermediate question answer 3
+    - second intermediate question answer 4
     CorrectAnswer: 1
     answered: 0
-  - Question: Which resistor is required for a current of 5 Amps from a 120V source
+  - Question: This is the third Intermediate question
     Answers:
-    - 60 Ohm
-    - 240 Ohm
-    - 24 Ohm
-    - 16 Ohm
+    - third intermediate question answer 1
+    - third intermediate question answer 2
+    - third intermediate question answer 3
+    - third intermediate question answer 4
     CorrectAnswer: 2
     answered: 0
-  - Question: Which resistor is required for a current of 20 Amps from a 120V source
+  - Question: This is the fourth Intermediate question
     Answers:
-    - 24 Ohm
-    - 100 Ohm
-    - 42 Ohm
-    - 6 Ohm
+    - fourth intermediate question answer 1
+    - fourth intermediate question answer 2
+    - fourth intermediate question answer 3
+    - fourth intermediate question answer 4
     CorrectAnswer: 3
     answered: 0
   QnA_Hard:
-  - Question: What is the current through a 7 Ohm resistor connected to a 42 V power
-      supply
+  - Question: This is the first hard question
     Answers:
-    - 6 A
-    - 7 A
-    - 700 mA
-    - 14 A
+    - first hard question answer 1
+    - first hard question answer 2
+    - first hard question answer 3
+    - first hard question answer 4
     CorrectAnswer: 0
     answered: 0
-  - Question: What is the current through a 30 Ohm resistor connected to a 120 V
-      power supply
+  - Question: This is the second hard question
     Answers:
-    - 13 A
-    - 4 A
-    - 6 A
-    - 3 A
+    - second hard question answer 1
+    - second hard question answer 2
+    - second hard question answer 3
+    - second hard question answer 4
     CorrectAnswer: 1
     answered: 0
   options:
@@ -52410,14 +52333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34290cf4bed45ee40bb06a9517f9e62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 402319739044695998, guid: 43cf30b6df2bc9e43ac94ced6a2abd86, type: 3}
+  enemyPrefab: {fileID: 5931733369112870401, guid: 8932f476ddc7dcb40879fe3f76d01361, type: 3}
   spawnPoints:
   - {fileID: 2119828279}
   - {fileID: 1356579303}
   - {fileID: 2018391410}
   - {fileID: 2031277638}
   - {fileID: 974297021}
-  spawnInterval: 3
+  spawnInterval: 1.5
 --- !u!4 &1879774922
 Transform:
   m_ObjectHideFlags: 0
@@ -53920,4 +53843,3 @@ SceneRoots:
   - {fileID: 1649605747}
   - {fileID: 26637381}
   - {fileID: 1879774922}
-  - {fileID: 1334931491}

@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,8 @@ public class ShootScript : MonoBehaviour
     public Transform Gun;
     Vector2 direction;
     public Transform ShootPoint;
+
+    public int BulletTTL = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,15 +38,31 @@ public class ShootScript : MonoBehaviour
         }
     }
     void FaceMouse()
-
     {
-        Gun.transform.right = direction;
+        if (this.gameObject.transform.localScale.x == -1)
+        {
+            Gun.transform.right = -direction;
+        }
+        else
+        {
+            Gun.transform.right = direction;
+        }
     }
     void Shoot()
     {
         GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-        BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
-        Destroy(BulletIns, 2);
+
+        if (this.gameObject.transform.localScale.x == -1)
+        {
+            BulletIns.GetComponent<Rigidbody2D>().AddForce(-BulletIns.transform.right * BulletSpeed * Time.fixedDeltaTime);
+        }
+        else
+        {
+            BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed * Time.fixedDeltaTime);
+        }
+
+        // BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed * Time.fixedDeltaTime);
+        Destroy(BulletIns, BulletTTL);
     }
     //    private void OnCollisionEnter(Collision collision)
     //    {
