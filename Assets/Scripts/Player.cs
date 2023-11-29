@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //Decrement HP when hit by enemy
+            // Decrement HP when hit by enemy
             HP--;
 
             if (HP == 0)

@@ -1,32 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+
     public Transform[] spawnPoints;
-    public float spawnInterval = 2f;
-    public int maxEnemies = 10;
+    public float spawnInterval = 3f;
 
     private float timeSinceLastSpawn;
-    private int enemiesSpawned;
 
     void Start()
     {
-        timeSinceLastSpawn = 0f;
-        enemiesSpawned = 0;
+
     }
 
     void Update()
     {
-        if (enemiesSpawned < maxEnemies)
-        {
-            timeSinceLastSpawn += Time.deltaTime;
+        timeSinceLastSpawn += Time.deltaTime;
 
-            if (timeSinceLastSpawn >= spawnInterval)
-            {
-                SpawnEnemy();
-                timeSinceLastSpawn = 0f;
-            }
+        if (timeSinceLastSpawn >= spawnInterval)
+        {
+            SpawnEnemy();
+            timeSinceLastSpawn = 0f;
         }
     }
 
@@ -43,11 +40,11 @@ public class EnemySpawner : MonoBehaviour
                 enemyRb.gravityScale = 0f;
             }
 
-            enemiesSpawned++;
         }
         else
         {
             Debug.LogError("EnemyPrefab is not assigned or no SpawnPoints are defined in the EnemySpawner.");
         }
     }
+    
 }

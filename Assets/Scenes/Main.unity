@@ -2158,6 +2158,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -3530,7 +3540,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a096d94c93af5a74399b546cac5143de, type: 2}
   - m_RefCount: 28
     m_Data: {fileID: 11400000, guid: bc78d5fa419195a4eaa48ca7b0975ed2, type: 2}
-  - m_RefCount: 27
+  - m_RefCount: 28
     m_Data: {fileID: 11400000, guid: e4b54bc9cecae444eba1c41408230974, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: fa654dd0b12b6bb4ba9eacfac6ee0108, type: 2}
@@ -3595,7 +3605,7 @@ Tilemap:
     m_Data: {fileID: 474986412, guid: 421f0ae681a93164da2911ee3a4da294, type: 3}
   - m_RefCount: 28
     m_Data: {fileID: -909611131, guid: 421f0ae681a93164da2911ee3a4da294, type: 3}
-  - m_RefCount: 27
+  - m_RefCount: 28
     m_Data: {fileID: 99770632, guid: 421f0ae681a93164da2911ee3a4da294, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 988210333, guid: 69407015c173dd742973dc0018b47d66, type: 3}
@@ -3650,7 +3660,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1317178374, guid: 69407015c173dd742973dc0018b47d66, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 274
+  - m_RefCount: 275
     m_Data:
       e00: 1
       e01: 0
@@ -3705,7 +3715,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 287
+  - m_RefCount: 288
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -51947,7 +51957,7 @@ GameObject:
   - component: {fileID: 1879774921}
   m_Layer: 0
   m_Name: SpawningSystem
-  m_TagString: Untagged
+  m_TagString: SpawningSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51971,8 +51981,7 @@ MonoBehaviour:
   - {fileID: 2018391410}
   - {fileID: 2031277638}
   - {fileID: 974297021}
-  spawnInterval: 2
-  maxEnemies: 20
+  spawnInterval: 3
 --- !u!4 &1879774922
 Transform:
   m_ObjectHideFlags: 0
