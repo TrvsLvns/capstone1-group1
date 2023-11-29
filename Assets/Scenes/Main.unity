@@ -52600,78 +52600,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _difficulty: 
   QnA_Easy:
-  - Question: This is the first easy question
+  - Question: What will the potential difference be across a 2 Ohm resister with
+      3 Amps of current flowing through it?
     Answers:
-    - first easy question answer 1
-    - first easy question answer 2
-    - first easy question answer 3
-    - first easy question answer 4
+    - 6 V
+    - 5 V
+    - 12 V
+    - 1.5 V
     CorrectAnswer: 0
     answered: 0
-  - Question: This is the second easy question
+  - Question: What will the potential difference be across a 200 milliohm resister
+      with 5 Amps of current flowing through it?
     Answers:
-    - second easy question answer 1
-    - second easy question answer 2
-    - second easy question answer 3
-    - second easy question answer 4
+    - 1 KV
+    - 1 V
+    - 5 V
+    - 20 V
     CorrectAnswer: 1
     answered: 0
-  - Question: This is the third easy question
+  - Question: What will the potential difference be across a 7 Ohm resister with
+      100 milliAmps of current flowing through it?
     Answers:
-    - third easy question answer 1
-    - third easy question answer 2
-    - third easy question answer 3
-    - third easy question answer 4
+    - 1 V
+    - 7 V
+    - 700 mV
+    - 400 mV
     CorrectAnswer: 2
     answered: 0
   QnA_Intermediate:
-  - Question: This is the first Intermediate question
+  - Question: Which resistor is required for a current of 8 Amps from a 4V source
     Answers:
-    - first intermediate question answer 1
-    - first intermediate question answer 2
-    - first intermediate question answer 3
-    - first intermediate question answer 4
+    - 500 mOhm
+    - 5 Ohm
+    - 2 Ohm
+    - 200 mOhm
     CorrectAnswer: 0
     answered: 0
-  - Question: This is the second Intermediate question
+  - Question: Which resistor is required for a current of 8 Amps from a 24V source
     Answers:
-    - second intermediate question answer 1
-    - second intermediate question answer 2
-    - second intermediate question answer 3
-    - second intermediate question answer 4
+    - 1 Ohm
+    - 3 Ohm
+    - 333 mOhm
+    - 8 Ohm
     CorrectAnswer: 1
     answered: 0
-  - Question: This is the third Intermediate question
+  - Question: Which resistor is required for a current of 5 Amps from a 120V source
     Answers:
-    - third intermediate question answer 1
-    - third intermediate question answer 2
-    - third intermediate question answer 3
-    - third intermediate question answer 4
+    - 60 Ohm
+    - 240 Ohm
+    - 24 Ohm
+    - 16 Ohm
     CorrectAnswer: 2
     answered: 0
-  - Question: This is the fourth Intermediate question
+  - Question: Which resistor is required for a current of 20 Amps from a 120V source
     Answers:
-    - fourth intermediate question answer 1
-    - fourth intermediate question answer 2
-    - fourth intermediate question answer 3
-    - fourth intermediate question answer 4
+    - 24 Ohm
+    - 100 Ohm
+    - 42 Ohm
+    - 6 Ohm
     CorrectAnswer: 3
     answered: 0
   QnA_Hard:
-  - Question: This is the first hard question
+  - Question: What is the current through a 7 Ohm resistor connected to a 42 V power
+      supply
     Answers:
-    - first hard question answer 1
-    - first hard question answer 2
-    - first hard question answer 3
-    - first hard question answer 4
+    - 6 A
+    - 7 A
+    - 700 mA
+    - 14 A
     CorrectAnswer: 0
     answered: 0
-  - Question: This is the second hard question
+  - Question: What is the current through a 30 Ohm resistor connected to a 120 V
+      power supply
     Answers:
-    - second hard question answer 1
-    - second hard question answer 2
-    - second hard question answer 3
-    - second hard question answer 4
+    - 13 A
+    - 4 A
+    - 6 A
+    - 3 A
     CorrectAnswer: 1
     answered: 0
   options:
