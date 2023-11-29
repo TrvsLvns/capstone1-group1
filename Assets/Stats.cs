@@ -18,7 +18,7 @@ public class Stats : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("WHATEVER TAG YOU NEED"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             //Decrement HP by X when shot
             health -= 5;
