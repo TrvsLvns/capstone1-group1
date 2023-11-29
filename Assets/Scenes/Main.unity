@@ -12409,7 +12409,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12548,6 +12548,7 @@ MonoBehaviour:
   BulletSpeed: 10000
   Gun: {fileID: 1294177990}
   ShootPoint: {fileID: 1964126370}
+  FireRate: 0.25
   BulletTTL: 2
 --- !u!1 &1356579302
 GameObject:
@@ -52340,7 +52341,7 @@ MonoBehaviour:
   - {fileID: 2018391410}
   - {fileID: 2031277638}
   - {fileID: 974297021}
-  spawnInterval: 1.5
+  spawnInterval: 1
 --- !u!4 &1879774922
 Transform:
   m_ObjectHideFlags: 0

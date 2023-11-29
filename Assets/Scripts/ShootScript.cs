@@ -12,8 +12,10 @@ public class ShootScript : MonoBehaviour
     public Transform Gun;
     Vector2 direction;
     public Transform ShootPoint;
-
+    // Faster the lower it is
+    public float FireRate = 0.5f;
     public int BulletTTL = 2;
+    private float time = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,19 @@ public class ShootScript : MonoBehaviour
         direction = mPos - (Vector2)Gun.position;
         FaceMouse();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
+        {
+            time += Time.deltaTime;
+
+            if (time >= FireRate)
+            {
+                Shoot();
+                time = 0f;
+            }
+        }
+        else if (Input.GetMouseButtonDown(1))
         {
             Shoot();
-
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-
         }
     }
     void FaceMouse()
@@ -64,16 +71,5 @@ public class ShootScript : MonoBehaviour
         // BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed * Time.fixedDeltaTime);
         Destroy(BulletIns, BulletTTL);
     }
-    //    private void OnCollisionEnter(Collision collision)
-    //    {
-    //        if (collision.gameObject.CompareTag("Enemy")) 
-    //        {
-    //            // Destroy the collided object
-    //            Destroy(collision.gameObject);
-
-    //            // Destroy the bullet itself
-    //            Destroy(gameObject);
-    //        }
-    //    }
 
 }

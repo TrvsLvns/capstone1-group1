@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,6 +60,8 @@ public class Player : MonoBehaviour
         {
             // Decrement HP when hit by enemy
             HP--;
+
+            UnityEngine.Debug.Log("Collision");
 
             if (HP == 0)
             {

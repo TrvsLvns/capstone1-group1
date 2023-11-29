@@ -7,7 +7,11 @@ public class BulletCollision : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject)
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            return;
+        }
+        else if (other.gameObject)
         {
 
             Destroy(this.gameObject);
