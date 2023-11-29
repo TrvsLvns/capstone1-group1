@@ -8,6 +8,9 @@ public class OnCollision : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        menuManager.onCollision();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            menuManager.onCollision();
+        }
     }
 }
