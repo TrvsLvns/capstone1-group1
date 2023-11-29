@@ -28,6 +28,8 @@ public class ShopManager : MonoBehaviour
         if (points >= healthCost) 
         {
             //Call function to increase health
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().increaseHealth();
+
             points -= healthCost;
             healthCost += 1;
             ShopPointsTxt.text = "Points: " + points;
@@ -40,6 +42,8 @@ public class ShopManager : MonoBehaviour
         if (points >= damageCost)
         {
             //Call function to increase gun damage
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().increaseDamage();
+
             points -= damageCost;
             damageCost += 1;
             ShopPointsTxt.text = "Points: " + points;

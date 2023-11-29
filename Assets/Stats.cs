@@ -34,9 +34,10 @@ public class Stats : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             //Decrement HP by X when shot
-            health -= 2;
+            int damage = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getDamage();
+            health -= damage;
 
-            if (health == 0)
+            if (health <= 0)
             {
                 // Destroy the object when HP hits 0
                 Destroy(this.gameObject);

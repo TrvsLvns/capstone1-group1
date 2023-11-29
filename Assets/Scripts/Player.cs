@@ -8,13 +8,15 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta; // difference between current and next position
     private RaycastHit2D hit; // used for casting the collider box ahead to check if allowed in a location
-    private int HP; //Health poinra
+    public int HP; //Health poinra
+    public int damage;
 
     // Start is called before the first frame update
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         HP = 3; //Start player off with 3 HP
+        damage = 1;
     }
 
     private void FixedUpdate()
@@ -70,5 +72,20 @@ public class Player : MonoBehaviour
             }
             // Quit application or something.
         }
+    }
+
+    public void increaseHealth()
+    {
+        HP += 1;
+    }
+
+    public int getDamage()
+    {
+        return damage;
+    }
+
+    public void increaseDamage()
+    {
+        damage += 1;
     }
 }
